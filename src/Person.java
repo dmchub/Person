@@ -20,9 +20,29 @@ public class Person {
         if(this.man != person.man){
             if(this.spouse != null)
                 this.divorce();
+            if(person.spouse != null){
+                person.divorce();
+            }
+            this.spouse = person;
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
-
-
+    /**
+     * Sets spouse = null if spouse is not null
+     * @return true - if person status has been changed
+    */
+    private boolean divorce() {
+        if(this.spouse != null){
+            this.spouse.spouse = null;
+            this.spouse = null;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
