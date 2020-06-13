@@ -1,7 +1,11 @@
+import java.util.*;
+
 public class Person {
     private final boolean man;
     private final String name;
     private Person spouse;
+
+    List ls = new ArrayList();
 
     public Person(boolean man, String name) {
         this.man = man;
